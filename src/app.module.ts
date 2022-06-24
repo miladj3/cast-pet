@@ -12,6 +12,9 @@ import { PostsModule } from './posts/posts.module';
 import { CommentsModule } from './comments/comments.module';
 import { CommentLikesModule } from './comment-likes/comment-likes.module';
 import { PostLikesModule } from './post-likes/post-likes.module';
+import { CommentReplyModule } from './comment-reply/comment-reply.module';
+import { CommentReplyLikeModule } from './comment-reply-like/comment-reply-like.module';
+import { FollowingModule } from './following/following.module';
 
 @Module({
   imports: [
@@ -24,7 +27,10 @@ import { PostLikesModule } from './post-likes/post-likes.module';
     PostsModule,
     CommentsModule,
     CommentLikesModule,
-    PostLikesModule],
+    PostLikesModule,
+    CommentReplyModule,
+    CommentReplyLikeModule,
+    FollowingModule],
   controllers: [AppController],
   providers: [AppService]
 })

@@ -1,13 +1,13 @@
 import {JoinColumn, ManyToOne} from "typeorm";
 import {Pet} from "../../pets/entities/pet.entity";
-import { Post } from "../../posts/entities/post.entity";
+import {Comment} from "../../comments/entities/comment.entity";
 
 export class CommentLike {
-  @JoinColumn({name: "petId"})
-  @ManyToOne((type) => Pet, (pet) => pet.avatars, {eager: false})
-  pet: Pet;
+    @JoinColumn({name: "petId"})
+    @ManyToOne((type) => Pet, (pet) => pet.commentLikes, {eager: false})
+    pet: Pet;
 
-  @JoinColumn({ name: 'postId' })
-  @ManyToOne((type) => Post, (a) => a.comments, {eager: false})
-  post: Post;
+    @JoinColumn({name: 'commentId'})
+    @ManyToOne((type) => Comment, (a) => a.commentLikes, {eager: false})
+    comment: Comment;
 }

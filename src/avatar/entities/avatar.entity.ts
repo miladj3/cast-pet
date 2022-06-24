@@ -1,18 +1,23 @@
-import { Column, JoinColumn, ManyToOne } from "typeorm";
-import { Pet } from "../../pets/entities/pet.entity";
+import {Column, JoinColumn, ManyToOne} from "typeorm";
+import {Pet} from "../../pets/entities/pet.entity";
 
 export class Avatar {
   @Column({
-    type: 'text',
+    type: "text"
   })
   minio: string;
 
   @Column({
-    type: 'text',
+    type: "text"
   })
   alt: string;
 
-  @JoinColumn({ name: 'petId' })
+  @Column({
+    type: "boolean"
+  })
+  isActive: boolean;
+
+  @JoinColumn({name: "petId"})
   @ManyToOne((type) => Pet, (pet) => pet.avatars, {eager: false})
   pet: Pet;
 }

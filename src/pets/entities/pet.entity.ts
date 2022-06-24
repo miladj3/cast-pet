@@ -6,6 +6,8 @@ import {Avatar} from "../../avatar/entities/avatar.entity";
 import {Post} from "../../posts/entities/post.entity";
 import {PostLike} from "../../post-likes/entities/post-like.entity";
 import {CommentLike} from "../../comment-likes/entities/comment-like.entity";
+import {CommentReplyLike} from "../../comment-reply-like/entities/comment-reply-like.entity";
+import {Following} from "../../following/entities/following.entity";
 
 @Entity({
   name: "pet"
@@ -31,6 +33,11 @@ export class Pet extends BaseEntity {
   })
   bio: string;
 
+  @Column({
+    type: "text"
+  })
+  story: string;
+
   @OneToMany((type) => Avatar, (a) => a.pet)
   avatars: Avatar[];
 
@@ -46,4 +53,14 @@ export class Pet extends BaseEntity {
 
   @OneToMany((type) => CommentLike, (a) => a.pet)
   commentLikes: CommentLike[];
+
+  @OneToMany((type) => CommentReplyLike, (a) => a.pet)
+  commentReplayLikes: CommentReplyLike[];
+
+  @OneToMany((type) => Following, (a) => a.pet)
+  following: Following[];
+
+  @JoinColumn({name: "petId"})
+  @ManyToOne((type) => Pet, (pet) => pet.following, {eager: false})
+  followers: Pet;
 }
