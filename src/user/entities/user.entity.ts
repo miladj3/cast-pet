@@ -1,29 +1,23 @@
-import {Column, OneToMany, PrimaryGeneratedColumn, Entity} from "typeorm";
-import {Pet} from "../../pets/entities/pet.entity";
-import {BaseEntity} from "../../base/base-entity";
+import { Column, OneToMany, PrimaryGeneratedColumn, Entity } from 'typeorm';
+import { Pet } from '../../pets/entities/pet.entity';
+import { BaseEntity } from '../../base/base-entity';
 
 @Entity({
-    name: "user"
+	name: 'user',
 })
 export class User extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+	@PrimaryGeneratedColumn()
+	id: number;
 
-    @Column({
-        type: "text",
-    })
-    userName: string;
+	@Column({ type: 'text' })
+	userName: string;
 
-    @Column({
-        type: "text",
-    })
-    password: string;
+	@Column({ type: 'text' })
+	password: string;
 
-    @Column({
-        type: "text",
-    })
-    email: string;
+	@Column({ type: 'text' })
+	email: string;
 
-    @OneToMany((type) => Pet, (pet) => pet)
-    pets: Pet[];
+	@OneToMany((type) => Pet, (pet) => pet)
+	pets: Pet[];
 }

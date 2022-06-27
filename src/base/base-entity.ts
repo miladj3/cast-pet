@@ -1,24 +1,16 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  TableInheritance,
-  UpdateDateColumn
-} from "typeorm";
-import { PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { PrimaryGeneratedColumn } from 'typeorm';
 
 export abstract class BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+	@PrimaryGeneratedColumn()
+	id: number;
 
-  @CreateDateColumn()
-  createdAt: Date;
+	@CreateDateColumn()
+	createdAt: Date;
 
-  @UpdateDateColumn()
-  updateAt: Date;
+	@UpdateDateColumn()
+	updateAt: Date;
 
-  @Column({
-    type: "boolean"
-  })
-  isRemoved: boolean;
+	@Column({ type: 'boolean' })
+	isRemoved: boolean;
 }
