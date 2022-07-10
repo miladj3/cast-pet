@@ -6,6 +6,6 @@
   "doubleQuote": true,
   "useTabs": false,
   "arrowParens": "always",
-  "trailingComma": "remove",
+  "trailingComma": "none",
   "endOfLine": "auto"
 }
