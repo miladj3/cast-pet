@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { PostLikesService } from 'src/api/post-likes/post-likes.service';
-import { PostLikesController } from 'src/api/post-likes/post-likes.controller';
+import { PostLikesController } from './controllers/post-likes.controller';
+import { PostLikesService } from './services/post-likes.service';
 
 @Module({
   controllers: [PostLikesController],

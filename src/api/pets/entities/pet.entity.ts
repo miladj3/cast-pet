@@ -1,13 +1,13 @@
 import { ManyToOne, JoinColumn, Entity, Column, OneToMany } from 'typeorm';
-import { BaseEntity } from '@/base/base-entity';
-import { GenderEnum } from '@/api/pets/pets.enum';
-import { Avatar } from '@/api/avatar/entities/avatar.entity';
-import { User } from '@/api/user/entities/user.entity';
-import { Post } from '@/api/posts/entities/post.entity';
-import { PostLike } from '@/api/post-likes/entities/post-like.entity';
-import { CommentLike } from '@/api/comment-likes/entities/comment-like.entity';
-import { CommentReplyLike } from '@/api/comment-reply-like/entities/comment-reply-like.entity';
-import { Following } from '@/api/following/entities/following.entity';
+import { BaseEntity } from '../../../base/base-entity';
+import { Avatar } from '../../avatar/entities/avatar.entity';
+import { User } from '../../user/entities/user.entity';
+import { GenderEnum } from './pets.enum';
+import { Post } from '../../posts/entities/post.entity';
+import { PostLike } from '../../post-likes/entities/post-like.entity';
+import { CommentLike } from '../../comment-likes/entities/comment-like.entity';
+import { CommentReplyLike } from '../../comment-reply-like/entities/comment-reply-like.entity';
+import { Following } from '../../following/entities/following.entity';
 
 @Entity({ name: 'Pet' })
 export class Pet extends BaseEntity {

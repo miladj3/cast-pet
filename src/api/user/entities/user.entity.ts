@@ -1,7 +1,7 @@
 import { Column, OneToMany, PrimaryGeneratedColumn, Entity } from 'typeorm';
-import { BaseEntity } from '@/base/base-entity';
-import { Pet } from '@/api/pets/entities/pet.entity';
 import { Exclude } from 'class-transformer';
+import { BaseEntity } from '../../../base/base-entity';
+import { Pet } from '../../pets/entities/pet.entity';
 
 @Entity({
   name: 'user'

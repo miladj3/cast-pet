@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { CommentLikesService } from 'src/api/comment-likes/comment-likes.service';
-import { CommentLikesController } from 'src/api/comment-likes/comment-likes.controller';
+import { CommentLikesController } from './controllers/comment-likes.controller';
+import { CommentLikesService } from './services/comment-likes.service';
 
 @Module({
   controllers: [CommentLikesController],

@@ -1,6 +1,6 @@
 import { EntitySchema } from 'typeorm';
-import { Pet } from '@/api/pets/entities/pet.entity';
-import { User } from '@/api/user/entities/user.entity';
+import { Pet } from '../../pets/entities/pet.entity';
+import { User } from '../entities/user.entity';
 
 export const UserSchema = new EntitySchema<User>({
   name: 'User',

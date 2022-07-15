@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { CommentsService } from 'src/api/comments/comments.service';
-import { CommentsController } from 'src/api/comments/comments.controller';
+import { CommentsController } from './controllers/comments.controller';
+import { CommentsService } from './services/comments.service';
 
 @Module({
   controllers: [CommentsController],

@@ -1,9 +1,18 @@
-import { Body, Controller, Inject, Post, ClassSerializerInterceptor, UseInterceptors, UseGuards, Req } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Inject,
+  Post,
+  ClassSerializerInterceptor,
+  UseInterceptors,
+  UseGuards,
+  Req
+} from '@nestjs/common';
 import { LoginDto, RegisterDto } from './auth.dto';
 import { JwtAuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { Request } from 'express';
-import { User } from '@/api/user/entities/user.entity';
+import { User } from '../user/entities/user.entity';
 
 @Controller('auth')
 export class AuthController {
